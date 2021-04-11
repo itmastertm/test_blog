@@ -1,3 +1,9 @@
-<% @posts.each do |post| %>
-	<h2><%= link_to post.title, post_path(post) %></h2>
-<% end %>
+<div class="container">
+	<strong>
+	<% @posts.each do |post| %>
+		<h2><%= link_to post.title, post_path(post) %></h2>
+		<%= post.body %>
+		<br/>
+	<% end %>
+</strong>
+</div>

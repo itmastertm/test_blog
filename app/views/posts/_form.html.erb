@@ -1,21 +1,20 @@
-<%= form_for @post do |f| %>
-	<div class="form-control">
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</div>
+<div class="container">
+  
+    <strong>
+        
 
-	<div class="form-control">
-		<%= f.label :summary %>
-		<%= f.text_area :summary %>
-	</div>
-
-	<div class="form-control">
-		<%= f.label :body %>
-		<%= f.text_area :body %>
-	</div>
-
-	<div class="form-control">
-		<%= f.submit 'Опубликовать' %>
-	</div>
-
+<%= form_for @post, :html => {class: 'form-group' } do |f| %>
+	<%= f.label 'Заголовок' %>
+	<%= f.text_field :title, :class => "form-control" %>
+	<%= f.label 'Текст' %>
+	<%= f.text_area :body, :class => "form-control" %>
+	<br/>
+<center>	
+	<%= f.submit 'Опубликовать', :class => 'btn btn-success' %>
+</center>
 <% end %>
+
+
+     </strong>  
+        
+</div>
