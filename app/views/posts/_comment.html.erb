@@ -1,0 +1,25 @@
+<div class="container">
+	<hr>
+	<%= 'Комментариев нет' if @post.comments.empty? %>
+	<br/>
+	<% @post.comments.each do |comment| %>
+
+	<p><strong>Автор:</strong> <%= comment.autor %> ; Время: <%= comment.created_at %></p>
+	<p><%= comment.body %></p>
+	<hr>
+	<% end %>
+	<%= form_for([@post, @post.comments.build]) do |f| %>
+	   <p>
+	    <%= f.label 'Ваше имя' %>
+	    <%= f.text_field :autor, :class => "form-control" %>
+	  </p>
+	  <p>
+	    <%= f.label 'Текст комментария' %>
+	    <%= f.text_area :body, :class => "form-control" %>
+	  </p>
+	  <center>	
+		<%= f.submit 'Опубликовать', :class => 'btn btn-success' %>
+	</center>
+	  
+	<% end %>
+</div>
