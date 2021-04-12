@@ -1,6 +1,6 @@
-<h1><%= @post.title %></h1>
-
-<p><%= @post.body %></p>
-
-<%= link_to 'Редактировать', edit_post_path(@post) %>
-<%= link_to 'Удалить', post_path(@post), method: :delete, data: {confirm: 'Вы уверены, что хотите удалить статью?'} %>
+<div class="container">
+	<h1><%= @post.title %></h1>
+	<p><%= @post.body %></p>
+	<%= link_to 'Редактировать', edit_post_path(@post) %>
+	<%= link_to 'Удалить', post_path(@post), method: :delete, data: {confirm: 'Вы уверены, что хотите удалить статью?'} %>
+</div>
